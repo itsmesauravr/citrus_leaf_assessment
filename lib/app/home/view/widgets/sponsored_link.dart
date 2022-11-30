@@ -1,3 +1,4 @@
+import 'package:citrus_leaf_assessment/app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class SponsoredLink extends StatelessWidget {
@@ -12,7 +13,7 @@ class SponsoredLink extends StatelessWidget {
         height: height * .145,
         width: width * .9,
         decoration: BoxDecoration(
-          color: Colors.grey.shade100,
+          color: AppColor.kGreyColor100,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(

@@ -20,7 +20,7 @@ class CentreContainer extends StatelessWidget {
                 height: height * 0.085,
                 width: width * 1 / 3.5,
                 decoration: BoxDecoration(
-                  color: Colors.blue.shade500,
+                  color: AppColor.kBlueColor500,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -47,7 +47,7 @@ class CentreContainer extends StatelessWidget {
             height: height * 0.085,
             width: width * 1 / 3.5,
             decoration: BoxDecoration(
-              color: Colors.blue.shade500,
+              color: AppColor.kBlueColor500,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
@@ -72,7 +72,7 @@ class CentreContainer extends StatelessWidget {
             height: height * 0.085,
             width: width * 1 / 3.5,
             decoration: BoxDecoration(
-              color: Colors.blue.shade500,
+              color: AppColor.kBlueColor500,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(

@@ -1,4 +1,5 @@
 import 'package:citrus_leaf_assessment/app/home/view/widgets/transfer_money_widget.dart';
+import 'package:citrus_leaf_assessment/app/utils/app_color.dart';
 import 'package:citrus_leaf_assessment/app/utils/app_size.dart';
 import 'package:flutter/material.dart';
 
@@ -61,7 +62,7 @@ class TransferMoneyCard extends StatelessWidget {
                 height: height * .18,
                 width: width * .9,
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
+                  color: AppColor.kGreyColor100,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),

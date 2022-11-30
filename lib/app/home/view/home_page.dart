@@ -4,6 +4,7 @@ import 'package:citrus_leaf_assessment/app/home/view/widgets/centre_container.da
 import 'package:citrus_leaf_assessment/app/home/view/widgets/page_view_widget.dart';
 import 'package:citrus_leaf_assessment/app/home/view/widgets/sponsored_link.dart';
 import 'package:citrus_leaf_assessment/app/home/view/widgets/transfer_card.dart';
+import 'package:citrus_leaf_assessment/app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
     final apiPro = Provider.of<ApiViewModel>(context);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: AppColor.kBlueColor100,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
