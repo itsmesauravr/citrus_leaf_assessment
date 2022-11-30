@@ -5,6 +5,4 @@ class AppImage {
   static final kScannerImage = Image.asset("assests/images/scan_icon.png");
   static final kBellImage = Image.asset("assests/images/bell_icon.png");
   static final kQuestionImage = Image.asset("assests/images/question_icon.png");
-  static final kMobileNumber = Image.asset("assests/images/profile_bank.png");
-  static final kCheckbank = Image.asset("assests/images/bank_icon.png");
 }

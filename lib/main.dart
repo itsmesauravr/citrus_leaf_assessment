@@ -1,3 +1,4 @@
+import 'package:citrus_leaf_assessment/app/api/view_model/api_view_model.dart';
 import 'package:citrus_leaf_assessment/app/login/view/login_screen.dart';
 import 'package:citrus_leaf_assessment/app/login/view_model/login_view_model.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => LoginProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ApiViewModel(),
         ),
       ],
       child: const MaterialApp(

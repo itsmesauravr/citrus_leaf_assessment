@@ -8,15 +8,17 @@ class PageViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 16.0),
-      height: height * .175,
+      height: height * .17,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0),
       ),
       child: PageView.builder(
-        controller: PageController(viewportFraction: 0.9),
+        controller: PageController(
+          viewportFraction: 0.9,
+          initialPage: 1,
+        ),
         itemCount: appBannerList.length,
         itemBuilder: (context, index) {
           return Container(
@@ -42,21 +44,6 @@ class PageViewWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text("Title".toUpperCase()),
-                        SizedBox(
-                          width: 200,
-                          child: Text(
-                            appBannerList[index].title.toString(),
-                            textAlign: TextAlign.center,
-                          ),
-                        )
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),

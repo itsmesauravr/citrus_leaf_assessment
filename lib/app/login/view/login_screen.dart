@@ -31,107 +31,109 @@ class LoginPage extends StatelessWidget {
               width: width,
               child: Form(
                 key: loginPro.formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AppSize.kHeight40,
-                    const LoginTextWidget(
-                      title: "LOGIN",
-                      size: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    AppSize.kHeight50,
-                    const LoginTextWidget(
-                      title: "Email",
-                      size: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    AppSize.kHeight5,
-                    LoginTextFormFieldWidget(
-                      controller: loginPro.emailEditingController,
-                      validator: EmailValidation.emailValid(),
-                    ),
-                    AppSize.kHeight10,
-                    const LoginTextWidget(
-                      title: "Password",
-                      size: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    AppSize.kHeight5,
-                    LoginTextFormFieldWidget(
-                      controller: loginPro.passwordEditingController,
-                      validator: PassWordValidation.passWordValid(),
-                      obscureText: loginPro.isHidden,
-                      suffixIcon: Consumer<LoginProvider>(
-                        builder: (context, value, _) {
-                          return IconButton(
-                            onPressed: () {
-                              value.togglePasswordView();
-                            },
-                            icon: Icon(
-                              value.isHidden
-                                  ? (Icons.visibility)
-                                  : (Icons.visibility_off),
-                            ),
-                            color: AppColor.kPinkColor,
-                          );
-                        },
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppSize.kHeight40,
+                      const LoginTextWidget(
+                        title: "LOGIN",
+                        size: 22,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ),
-                    AppSize.kHeight20,
-                    const RememberMeWidget(),
-                    AppSize.kHeight20,
-                    Center(
-                      child: Container(
-                        height: height * .07,
-                        width: width,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                      AppSize.kHeight50,
+                      const LoginTextWidget(
+                        title: "Email",
+                        size: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      AppSize.kHeight5,
+                      LoginTextFormFieldWidget(
+                        controller: loginPro.emailEditingController,
+                        validator: EmailValidation.emailValid(),
+                      ),
+                      AppSize.kHeight10,
+                      const LoginTextWidget(
+                        title: "Password",
+                        size: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      AppSize.kHeight5,
+                      LoginTextFormFieldWidget(
+                        controller: loginPro.passwordEditingController,
+                        validator: PassWordValidation.passWordValid(),
+                        obscureText: loginPro.isHidden,
+                        suffixIcon: Consumer<LoginProvider>(
+                          builder: (context, value, _) {
+                            return IconButton(
+                              onPressed: () {
+                                value.togglePasswordView();
+                              },
+                              icon: Icon(
+                                value.isHidden
+                                    ? (Icons.visibility)
+                                    : (Icons.visibility_off),
+                              ),
+                              color: AppColor.kPinkColor,
+                            );
+                          },
                         ),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                              AppColor.kPinkColor,
+                      ),
+                      AppSize.kHeight20,
+                      const RememberMeWidget(),
+                      AppSize.kHeight20,
+                      Center(
+                        child: Container(
+                          height: height * .07,
+                          width: width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                AppColor.kPinkColor,
+                              ),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
                             ),
-                            shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                            onPressed: () {
+                              loginPro.formValid(context);
+                              loginPro.loginFunction(context);
+                            },
+                            child: const Text(
+                              "LOGIN",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
                               ),
                             ),
                           ),
-                          onPressed: () {
-                            loginPro.formValid(context);
-                            loginPro.loginFunction(context);
-                          },
-                          child: const Text(
-                            "LOGIN",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20,
-                            ),
-                          ),
                         ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const LoginTextWidget(
-                            title: "Forget Password?",
-                            size: 16,
-                            fontWeight: FontWeight.w500,
-                            color: AppColor.kGreyColor,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const LoginTextWidget(
+                              title: "Forget Password?",
+                              size: 16,
+                              fontWeight: FontWeight.w500,
+                              color: AppColor.kGreyColor,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const DividerWidget(),
-                    AppSize.kHeight10,
-                    const OtherLoginWidget(),
-                    const NeedAccountWidget(),
-                  ],
+                        ],
+                      ),
+                      const DividerWidget(),
+                      AppSize.kHeight10,
+                      const OtherLoginWidget(),
+                      const NeedAccountWidget(),
+                    ],
+                  ),
                 ),
               ),
             ),
